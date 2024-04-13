@@ -1,4 +1,4 @@
-<div align="center"><img src="https://github.com/yinsn/cleen/blob/develop/docs/images/Cleen.svg" width="600"/></div>
+<div align="center"><img src="https://github.com/yinsn/Cleen/blob/develop/docs/images/Cleen.svg" width="650"/></div>
 
 # Cleen
 
