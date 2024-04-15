@@ -9,8 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 ipykernel = "^6.29.4"
-shap = "^0.45.0"
-scikit-learn = "^1.4.2"
+paradance = "^0.4.21"
 
 [build-system]
 requires = ["poetry-core"]
