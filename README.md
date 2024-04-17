@@ -2,6 +2,10 @@
 
 # Cleen
 
+[![Python](https://img.shields.io/badge/python3.9-red?logo=Python&logoColor=white)](https://www.python.org)
+[![PyPI](https://img.shields.io/pypi/v/cleen?color=green)](https://pypi.org/project/cleen/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yinsn/cleen)
+
 Unveiling Insights Through Automated Feature Range Analysis.
 
 ## Dependencies
