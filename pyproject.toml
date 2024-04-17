@@ -8,8 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-ipykernel = "^6.29.4"
 paradance = "^0.4.21"
+lightgbm = "^4.3.0"
 
 [build-system]
 requires = ["poetry-core"]
