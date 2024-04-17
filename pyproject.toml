@@ -2,7 +2,7 @@
 name = "cleen"
 version = "0.0.1"
 description = "Unveiling Insights Through Automated Feature Range Analysis."
-authors = ["yin <ycheng_sjtu@foxmail.com>"]
+authors = ["Yin Cheng <yin.sjtu@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 

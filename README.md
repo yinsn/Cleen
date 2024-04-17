@@ -6,19 +6,19 @@ Unveiling Insights Through Automated Feature Range Analysis.
 
 ## Dependencies
 
-Cleen requires libomp for parallel processing capabilities. If you are using macOS, you can install libomp with Homebrew:
+Cleen requires `libomp` for parallel processing capabilities. If you are using macOS, you can install libomp with Homebrew:
 
 ```bash
 brew install libomp
 ```
 
-On Linux distributions, libomp can typically be installed via your package manager. For example, on Ubuntu:
+On Linux distributions, `libomp` can typically be installed via your package manager. For example, on Ubuntu:
 
 ```bash
 sudo apt-get install libomp-dev
 ```
 
-Please ensure that libomp is installed prior to installing Cleen to avoid any operational issues.
+Please ensure that `libomp` is installed prior to installing Cleen to avoid any operational issues.
 
 ## Installation
 
