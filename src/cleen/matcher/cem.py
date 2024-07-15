@@ -34,10 +34,11 @@ class CEMMatcher:
             raise NotImplementedError(
                 f'Coarsen Method "{coarsen_method}" Not Implemented'
             )
-        if dataframe.duplicated().sum() > 0:
-            raise ValueError('Duplicate Rows in "dataframe"')
+        column_names = dataframe.columns.tolist()
+        if len(set(column_names)) != len(column_names):
+            raise ValueError(f'Duplicate Column Names in "dataframe"')
         if len(set(feature_columns)) != len(feature_columns):
-            raise ValueError('Duplicate Rows in "feature_columns"')
+            raise ValueError('Duplicate Features in "feature_columns"')
         unique_labels = set(dataframe[label_column])
         if len(unique_labels) != 2:
             raise ValueError(
@@ -203,7 +204,7 @@ class CEMMatcher:
         Exact Matching based on the Result of _coarsen_features(). Return the Matched DataFrame with Extra Information.
         """
         matching_result_index = []
-        for group_name, group in self.dataframe.groupby(self.coarsen_group_index_name):
+        for _, group in self.dataframe.groupby(self.coarsen_group_index_name):
             unique_labels = group[self.label_column].unique()
             if (0 in unique_labels) and (1 in unique_labels):
                 if self.is_key_to_key:
@@ -244,6 +245,12 @@ class CEMMatcher:
         dataframe_matched = self.dataframe[
             self.dataframe[self.index_column].isin(matching_result_index)
         ]
+        if dataframe_matched.empty:
+            warnings.warn(
+                "Matching Result is Empty, Please Check your Data.",
+                UserWarning,
+            )
+            return dataframe_matched
         if self.is_key_to_key:
             dataframe_matched[self.matching_weights_column] = 1.0
         else:
