@@ -21,13 +21,16 @@ class BasePreprocessor(metaclass=ABCMeta):
         dataframe: Optional[pd.DataFrame] = None,
         config_path: Optional[str] = None,
     ) -> None:
-        if dataframe is None:
-            config = load_config(config_path)
-            self.dataframe = CSVLoader(
-                file_path=config.file_path,
-                file_name=config.file_name,
-                file_type=config.file_type,
-                max_rows=config.max_rows,
-            ).df
-        else:
+        self.config = load_config(config_path)
+        if dataframe is not None:
             self.dataframe = dataframe
+        else:
+            self._load_data()
+
+    def _load_data(self) -> None:
+        self.dataframe = CSVLoader(
+            file_path=self.config.file_path,
+            file_name=self.config.file_name,
+            file_type=self.config.file_type,
+            max_rows=self.config.max_rows,
+        ).df
